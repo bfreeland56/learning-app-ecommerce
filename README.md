@@ -36,11 +36,16 @@ sudo firewall-cmd --reload
 
 ```
 $ mysql
+MariaDB > cat > configure-db.sql
 MariaDB > CREATE DATABASE ecomdb;
 MariaDB > CREATE USER 'ecomuser'@'localhost' IDENTIFIED BY 'ecompassword';
 MariaDB > GRANT ALL PRIVILEGES ON *.* TO 'ecomuser'@'localhost';
 MariaDB > FLUSH PRIVILEGES;
+"control C"
 ```
+
+sudo mysql <configure-db.sql
+cat > configure-db.sql "control C"
 
 > ON a multi-node setup remember to provide the IP address of the web server here: `'ecomuser'@'web-server-ip'`
 
